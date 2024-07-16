@@ -27,8 +27,10 @@ function History() {
     })
 
     return (
-        <div>
+        payedHistory.length !== 0 ? <div>
             {showHistory}
+        </div> : <div className="flex justify-center items-center h-full text-white font-semibold text-5xl border-y-4 border-yellow-600">
+            No History
         </div>
     )
 }

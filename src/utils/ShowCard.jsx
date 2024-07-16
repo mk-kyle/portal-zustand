@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { store } from "../zustand/store";
 import cardIcon from './kindpng_6039982.png'
 
@@ -29,7 +28,7 @@ function ShowCard() {
         })
         const NumCard = card.showNumberCard.match(/.{1,4}/g);
         return (
-            <div onClick={() => setCardHandler(card.id)} key={`container${card.id}`} style={{ backgroundColor: bgColor }} className="w-4/5 rounded-md p-3 text-white mx-auto mt-3">
+            <div onClick={() => setCardHandler(card.id)} key={`container${card.id}`} style={{ backgroundColor: bgColor }} className="w-4/5 h-[90%] rounded-md p-3 text-white mx-auto mt-3">
                 <div className="flex justify-between items-center mb-1">
                     <img className="rounded-full w-10" src={card.imgCard} alt="Bank Icon" />
                     <img className="w-10" src={cardIcon} alt="Bank Icon" />
@@ -59,10 +58,16 @@ function ShowCard() {
             </div>
         )
     })
-    
+
+
     return (
-        <div>{showCards}</div>
+        bankCard.length == 0 ? <div className="w-4/5 h-[90%] rounded-md p-3  mx-auto mt-3 bg-white flex justify-between items-center flex-col">
+            <img className="w-10 self-end " src={cardIcon} alt="" /> 
+            <p className="text-5xl font-semibold shadow-sm drop-shadow-2xl mb-4">No Card</p>
+            <div></div>
+        </div> : <div>{showCards}</div>
     )
+
 }
 
 export default ShowCard

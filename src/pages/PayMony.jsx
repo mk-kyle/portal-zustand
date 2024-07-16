@@ -58,7 +58,7 @@ function PayMony() {
     const submitHandler = (e) => {
         e.preventDefault()
 
-        if (desCardNum.length == 16 && desCardImg && passCard.length > 5 ) {
+        if (desCardNum.length == 16 && desCardImg && passCard.length > 5 && sendedCard.amountCard >= desCardAmount) {
             e.target[2].value = ''
             e.target[3].value = ''
             e.target[4].value = ''
